@@ -31,17 +31,13 @@ def take_recipe():
 
     return {'name': name, 'cooking_time': cooking_time, 'ingredients': ingredients, 'difficulty': difficulty}    
 
-
-
-
 file_name = input("What file are you storing in?")
 
 try:
     with open(file_name, 'rb') as my_file:
         data = pickle.load(my_file)
-        print(data)
 except FileNotFoundError:
-    print("File doesn't exist - exiting.")
+    print("File doesn't exist. Creating new file...")
     data = {'recipes_list': recipes_list, 'all_ingredients': all_ingredients}
 except:
     print("An unexpected error occurred.")
@@ -51,15 +47,7 @@ else:
 
 finally:
     recipes_list, all_ingredients = data['recipes_list'], data['all_ingredients']
-    # print("\n")
-    # print("Recipe: ", recipe['name'])
-    # print("Cooking Time (min): " + str(recipe['cooking_time']))
-    # print("Ingredients: ")
-    # for ingredient in recipe['ingredients']:
-    #     print(ingredient)
-    # print("Difficult level: " + recipe['difficulty'])
-
-
+    
 n = int(input("How many recipes would you like to enter? "))
 
 for i in range(0, n):
