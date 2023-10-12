@@ -29,7 +29,7 @@ class Height(object):
         height_A_inches = self.feet * 12 + self.inches
         height_B_inches = other.feet * 12 + other.inches
 
-        # Subtracting them 
+        # Subtracting them
         total_height_inches = height_A_inches - height_B_inches
 
         # Getting the output in feet
@@ -40,7 +40,7 @@ class Height(object):
 
         # Returning the final output as a new Height object
         return Height(output_feet, output_inches)
-    
+
     def __lt__(self, other):
         height_inches_A = self.feet * 12 + self.inches
         height_inches_B = other.feet * 12 + other.inches
@@ -55,7 +55,7 @@ class Height(object):
         height_inches_A = self.feet * 12 + self.inches
         height_inches_B = other.feet * 12 + other.inches
         return height_inches_A == height_inches_B
-    
+
     def __gt__(self, other):
         height_inches_A = self.feet * 12 + self.inches
         height_inches_B = other.feet * 12 + other.inches
@@ -70,7 +70,7 @@ class Height(object):
         height_inches_A = self.feet * 12 + self.inches
         height_inches_B = other.feet * 12 + other.inches
         return height_inches_A != height_inches_B
-    
+
 
 # person_A_height = Height(5, 10)
 # person_B_height = Height(4, 10)
