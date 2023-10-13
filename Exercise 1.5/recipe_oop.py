@@ -8,13 +8,13 @@ class Recipe(object):
         self.cooking_time = cooking_time
 
         if cooking_time < 10 and len(ingredients) < 4:
-            self.difficulty = 'Easy'
-        elif cooking_time< 10 and len(ingredients) >= 4:
-            self.difficulty = 'Medium'
+            self.difficulty = "Easy"
+        elif cooking_time < 10 and len(ingredients) >= 4:
+            self.difficulty = "Medium"
         elif cooking_time >= 10 and len(ingredients) < 4:
-            self.difficulty = 'Intermediate'
+            self.difficulty = "Intermediate"
         elif cooking_time >= 10 and len(ingredients) >= 4:
-            self.difficulty = 'Hard'
+            self.difficulty = "Hard"
 
     def __str__(self):
         # print("\n")
@@ -25,13 +25,20 @@ class Recipe(object):
         #     print(ingredient)
         # print("Difficulty level: " + self.difficulty)
 
-        mystring = "\n".join(map(str,self.ingredients))
-        output = "\nRecipe: " + str(self.name) + \
-        "\nCooking Time (min): " + str(self.cooking_time) + \
-        "\nIngredients:\n" + str(mystring) + \
-        "\nDifficulty level: " + str(self.difficulty)
+        mystring = "\n".join(map(str, self.ingredients))
+        output = (
+            "\nRecipe: "
+            + str(self.name)
+            + "\nCooking Time (min): "
+            + str(self.cooking_time)
+            + "\nIngredients:\n"
+            + str(mystring)
+            + "\nDifficulty level: "
+            + str(self.difficulty)
+        )
 
         return output
+
     def set_name(self, name):
         self.name = name
 
@@ -105,7 +112,9 @@ print(coffee)
 cake = Recipe(
     "Cake",
 )
-cake.add_ingredients("Sugar", "Butter", "Eggs", "Vanilla Essence", "Flour", "Baking Powder", "Milk")
+cake.add_ingredients(
+    "Sugar", "Butter", "Eggs", "Vanilla Essence", "Flour", "Baking Powder", "Milk"
+)
 cake.set_cooking_time(50)
 cake.calculate_difficulty()
 Recipe.recipes_list.append(cake)
@@ -114,7 +123,9 @@ print(cake)
 banana_smoothie = Recipe(
     "Banana Smoothie",
 )
-banana_smoothie.add_ingredients("Bananas", "Milk", "Peanut Butter", "Sugar", "Ice Cubes")
+banana_smoothie.add_ingredients(
+    "Bananas", "Milk", "Peanut Butter", "Sugar", "Ice Cubes"
+)
 banana_smoothie.set_cooking_time(5)
 banana_smoothie.calculate_difficulty()
 Recipe.recipes_list.append(banana_smoothie)
